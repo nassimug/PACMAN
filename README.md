@@ -1,21 +1,45 @@
-Pacman game using the Java Graphic libraries.
+# Pacman Game
 
+Ce projet consiste en la création d’un jeu inspiré du célèbre jeu [Pacman](https://fr.wikipedia.org/wiki/Pac-Man), développé en utilisant les bibliothèques graphiques Java.
 
-Game
-Le projet consiste en la réalisation d’un jeu s’inspirant du jeu Pacman https://fr.wikipedia.org/wiki/Pac-Man . Plus précisément, la partie se déroule sur une grille 2D de cases correspondant à un labyrinthe vu de dessus. Le jeu consiste à déplacer Pacman, un personnage dans un labyrinthe afin de lui faire manger toutes les pacgommes qui s’y trouvent. Quatre fantômes hantent le labyrinthe et s’y déplacent aléatoirement. Si un des fantômes touche le pacman alors le pacman perd une des ses trois vies. En plus des pacgommes classique (bleus), il existe aussi quatre pacgommes bonus (autre couleurs). Ces bonus ont un effet sur le pacman et/ou les fantômes et/ou le labyrinthe. Le personnage peut emprunter des passages situ´es de chaque côté de l’écran, produisant un effet de wraparound, le faisant réapparaitre de l’autre côté du labyrinthe. Le tableau suivant indiques les différents points et effet des pacgommes.
+## Description du Jeu
 
+Le jeu se déroule sur une grille 2D représentant un labyrinthe vu de dessus. L'objectif est de guider Pacman dans le labyrinthe pour qu'il mange toutes les pacgommes tout en évitant les quatre fantômes qui y errent aléatoirement. Le joueur commence avec trois vies et peut en gagner une supplémentaire en accumulant plus de 5000 points.
 
-PacGommes
-Color	Points	Effect
-Jaune	100	~~
-Violet	300	Le pacman devient invisible pour les fantômes. Sa couleur devient jaune pale
-Orange	500	Le pacman devient un superpacman sa couleur est alors orange et les fantômes deviennent alors bleus
-Vert	1000	Modifie la structure du labyrinthe
+### Règles du Jeu
 
-Regles
-Initialement il a trois vies.
-Si le joueur dépasse les 5000 points, il obtient une vie supplémentaire
-Chaque fantôme se déplace dans une direction jusqu’à ce qu’il atteigne un mur, puis choisit une nouvelle direction aléatoirement.
-Quand le pacman est invisible et le pacman pourra traverser les fantômes sans perdre de vie.
-Quand le pacman est un superpacman, les fantômes deviennent vulnérables. Dans ce cas, ils se déplacent deux fois plus lentement et ils reviennent au centre du labyrinthe si ils sont touchés par le pacman.
-Le jeu se termine quand il n’y a plus de pacgommes et la partie est gagnée ou quand le pacman a perdu toutes ses vies et la partie est perdue.
+- **Vies initiales :** 3
+- **Conditions de victoire :** manger toutes les pacgommes
+- **Conditions de défaite :** perdre toutes ses vies
+
+### Déplacements et interactions
+
+- **Pacman** peut se déplacer dans les quatre directions du labyrinthe. Il peut utiliser les passages de chaque côté de l’écran pour traverser d’un bord à l’autre.
+- **Fantômes** se déplacent aléatoirement, changeant de direction lorsqu'ils rencontrent un mur. Si un fantôme touche Pacman, le joueur perd une vie.
+
+### Types de PacGommes et Effets
+
+| Couleur | Points | Effet |
+|---------|--------|-------|
+| Jaune   | 100    | Aucun effet spécial |
+| Violet  | 300    | Pacman devient invisible pour les fantômes et change de couleur en jaune pâle |
+| Orange  | 500    | Pacman devient un superpacman (couleur orange) et les fantômes deviennent bleus, devenant vulnérables |
+| Vert    | 1000   | Change la structure du labyrinthe |
+
+### Effets et règles spécifiques
+
+- **Invisibilité (pacgommes violettes) :** Pacman peut traverser les fantômes sans perdre de vie.
+- **SuperPacman (pacgommes oranges) :** Les fantômes deviennent vulnérables et se déplacent deux fois plus lentement. S’ils sont touchés par Pacman, ils retournent au centre du labyrinthe.
+- **Points supplémentaires :** Si le joueur atteint 5000 points, une vie supplémentaire est accordée.
+
+## Terminaison du Jeu
+
+Le jeu se termine lorsque :
+1. Pacman mange toutes les pacgommes (victoire).
+2. Pacman perd toutes ses vies (défaite).
+
+## Instructions d'Installation
+
+1. Clonez le dépôt sur votre machine.
+   ```bash
+   git clone https://github.com/nassimug/Pacman
