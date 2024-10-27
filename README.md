@@ -1,37 +1,21 @@
-# Projet S5 - Pacman
-## Université Paris Est Créteil – Licence 3
-
-Bienvenue sur le dépôt du projet Pacman de la Licence 3 à l'Université Paris Est Créteil, réalisé par MADI Nassim et AIT-HABIB Amir.
-
-### Introduction
-
-Ce projet consiste en la réalisation d'un jeu s'inspirant du célèbre Pac-Man. Le jeu se déroule sur une grille 2D de cases représentant un labyrinthe vu de dessus. Le but est de déplacer Pacman dans le labyrinthe afin de lui faire manger toutes les pacgommes tout en évitant les fantômes qui se déplacent aléatoirement.
-
-### Fonctionnalités
-
-- **Déplacement de Pacman** : Le personnage peut se déplacer dans le labyrinthe et emprunter des passages situés de chaque côté de l'écran (effet de wraparound).
-- **Pacgommes et Fantômes** : Le jeu comprend des pacgommes classiques et des pacgommes bonus qui ont des effets variés sur Pacman, les fantômes, ou le labyrinthe.
-- **Gestion des vies et des points** : Pacman commence avec trois vies et peut en gagner en atteignant certains seuils de points.
-- **États des fantômes** : Les fantômes peuvent devenir vulnérables lorsque Pacman mange certaines pacgommes, modifiant leur comportement et leur vitesse.
-
-### Structure des Dossiers
-
-- `src`: le dossier pour maintenir les sources.
-- `lib`: le dossier pour maintenir les dépendances.
+Pacman game using the Java Graphic libraries.
 
 
-### Contribution et Contact
+Game
+Le projet consiste en la réalisation d’un jeu s’inspirant du jeu Pacman https://fr.wikipedia.org/wiki/Pac-Man . Plus précisément, la partie se déroule sur une grille 2D de cases correspondant à un labyrinthe vu de dessus. Le jeu consiste à déplacer Pacman, un personnage dans un labyrinthe afin de lui faire manger toutes les pacgommes qui s’y trouvent. Quatre fantômes hantent le labyrinthe et s’y déplacent aléatoirement. Si un des fantômes touche le pacman alors le pacman perd une des ses trois vies. En plus des pacgommes classique (bleus), il existe aussi quatre pacgommes bonus (autre couleurs). Ces bonus ont un effet sur le pacman et/ou les fantômes et/ou le labyrinthe. Le personnage peut emprunter des passages situ´es de chaque côté de l’écran, produisant un effet de wraparound, le faisant réapparaitre de l’autre côté du labyrinthe. Le tableau suivant indiques les différents points et effet des pacgommes.
 
-- **MADI Nassim** : [nassim.madi@etu.u-pec.fr]
-- **AIT-HABIB Amir** : [amir.ait-habib@etu.u-pec.fr]
-- **Chargés de TP** : youssouf.oualhadj@lacl.fr, luidnel.maignan@u-pec.fr
 
-### Remerciements
+PacGommes
+Color	Points	Effect
+Jaune	100	~~
+Violet	300	Le pacman devient invisible pour les fantômes. Sa couleur devient jaune pale
+Orange	500	Le pacman devient un superpacman sa couleur est alors orange et les fantômes deviennent alors bleus
+Vert	1000	Modifie la structure du labyrinthe
 
-Nous remercions l'Université Paris Est Créteil pour la mise en place de ce projet formateur, ainsi que tous les participants et superviseurs impliqués.
-
----
-
-**Bonne chance à tous les participants et puissiez-vous créer un Pacman amusant et innovant !**# Pacman
-# Pacman
-# Pacman
+Regles
+Initialement il a trois vies.
+Si le joueur dépasse les 5000 points, il obtient une vie supplémentaire
+Chaque fantôme se déplace dans une direction jusqu’à ce qu’il atteigne un mur, puis choisit une nouvelle direction aléatoirement.
+Quand le pacman est invisible et le pacman pourra traverser les fantômes sans perdre de vie.
+Quand le pacman est un superpacman, les fantômes deviennent vulnérables. Dans ce cas, ils se déplacent deux fois plus lentement et ils reviennent au centre du labyrinthe si ils sont touchés par le pacman.
+Le jeu se termine quand il n’y a plus de pacgommes et la partie est gagnée ou quand le pacman a perdu toutes ses vies et la partie est perdue.
